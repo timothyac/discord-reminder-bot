@@ -4,7 +4,7 @@
   "description": "Bot that helps set reminders via discord webhook",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/SunstroUS/discord-reminder-bot/issues"
   },
-  "homepage": "https://github.com/SunstroUS/discord-reminder-bot#readme"
+  "homepage": "https://github.com/SunstroUS/discord-reminder-bot#readme",
+  "dependencies": {
+    "discord-webhook-api": "^1.0.1",
+    "discord.js": "^11.4.2"
+  }
 }
