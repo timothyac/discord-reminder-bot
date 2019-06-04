@@ -19,11 +19,12 @@
           Welcome to the web interface!
         </h1>
       </header>
-      <form>
+      <form action="/" method="post">
         <!-- Webhook input -->
         <div class="form-group">
           <label for="webhook-input">Webhook URL</label>
           <input
+            name="webhook"
             type="text"
             class="form-control"
             id="webhook-input"
@@ -37,6 +38,7 @@
           <div class="col">
             <label for="color-input">Color</label>
             <input
+            name="color"
               type="text"
               class="form-control"
               id="color-input"
@@ -49,7 +51,8 @@
           <div class="col">
             <label for="delay-input">Delay</label>
             <input
-              type="number"
+            name="delay"
+            type="number"
               class="form-control"
               id="delay-input"
               aria-describedby="delayHelp"
@@ -64,6 +67,7 @@
         <div class="form-group">
           <label for="title-input">Title</label>
           <input
+            name="title"
             type="text"
             class="form-control"
             id="title-input"
@@ -76,6 +80,7 @@
         <div class="form-group">
           <label for="description-input">Description</label>
           <textarea
+            name="description"
             class="form-control"
             id="description-input"
             placeholder="Enter Description"
@@ -88,18 +93,19 @@
             >Photo Attachment (Currently Disabled)</label
           >
           <input
+            name="image"
             type="file"
             class="form-control-file"
             id="file-attachment"
-            disabled
+            
           />
         </div>
 
         <!-- Send button -->
-        <button id="submit-button" class="btn btn-primary">Send</button>
+        <button type="submit" id="submit-button" class="btn btn-primary">Send</button>
       </form>
     </div>
-    <script src="./js/bundle.js"></script>
+    <!-- <script src="./js/bundle.js"></script> -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
