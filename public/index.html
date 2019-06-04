@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container">
-      <header>
+      <header style="margin-top: 2rem">
         <h1>
           Welcome to the web interface!
         </h1>
@@ -22,23 +22,51 @@
       <form>
         <!-- Webhook input -->
         <div class="form-group">
-          <label for="webhookInput">Webhook URL</label>
+          <label for="webhook-input">Webhook URL</label>
           <input
             type="text"
             class="form-control"
-            id="webhookInput"
+            id="webhook-input"
             aria-describedby="webhookHelp"
             placeholder="Enter webhook"
           />
         </div>
 
+        <div class="form-row">
+          <!-- Color input -->
+          <div class="col">
+            <label for="color-input">Color</label>
+            <input
+              type="text"
+              class="form-control"
+              id="color-input"
+              aria-describedby="colorHelp"
+              placeholder="Enter color | Example: #ff0000"
+            />
+          </div>
+
+          <!-- Delay input -->
+          <div class="col">
+            <label for="delay-input">Delay</label>
+            <input
+              type="number"
+              class="form-control"
+              id="delay-input"
+              aria-describedby="delayHelp"
+              placeholder="Enter delay (ms) | Example: 1500"
+            />
+          </div>
+        </div>
+
+        <br />
+
         <!-- Title input -->
         <div class="form-group">
-          <label for="titleInput">Title</label>
+          <label for="title-input">Title</label>
           <input
             type="text"
             class="form-control"
-            id="titleInput"
+            id="title-input"
             aria-describedby="titleHelp"
             placeholder="Enter title"
           />
@@ -46,26 +74,29 @@
 
         <!-- Description textarea -->
         <div class="form-group">
-          <label for="descriptionInput">Description</label>
+          <label for="description-input">Description</label>
           <textarea
             class="form-control"
-            id="descriptionInput"
+            id="description-input"
             placeholder="Enter Description"
           ></textarea>
         </div>
 
         <!-- Photo Attachment -->
         <div class="form-group">
-          <label for="exampleFormControlFile1">Example file input</label>
+          <label for="file-attachment"
+            >Photo Attachment (Currently Disabled)</label
+          >
           <input
             type="file"
             class="form-control-file"
-            id="exampleFormControlFile1"
+            id="file-attachment"
+            disabled
           />
         </div>
 
         <!-- Send button -->
-        <input id="submit-input" class="btn btn-primary" placeholder="Send" />
+        <button id="submit-button" class="btn btn-primary">Send</button>
       </form>
     </div>
     <script src="./js/bundle.js"></script>
