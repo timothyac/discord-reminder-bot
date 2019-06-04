@@ -4,13 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>discord-reminder-api web interface</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <title>discord-reminder-api</title>
   </head>
   <body>
-    <header>
-      <h1>
-        Welcome to the web interface!
-      </h1>
-    </header>
+    <div class="container">
+      <header>
+        <h1>
+          Welcome to the web interface!
+        </h1>
+      </header>
+      <form>
+        <!-- Webhook input -->
+        <div class="form-group">
+          <label for="webhookInput">Webhook URL</label>
+          <input
+            type="text"
+            class="form-control"
+            id="webhookInput"
+            aria-describedby="webhookHelp"
+            placeholder="Enter webhook"
+          />
+        </div>
+
+        <!-- Title input -->
+        <div class="form-group">
+          <label for="titleInput">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titleInput"
+            aria-describedby="titleHelp"
+            placeholder="Enter title"
+          />
+        </div>
+
+        <!-- Description textarea -->
+        <div class="form-group">
+          <label for="descriptionInput">Description</label>
+          <textarea
+            class="form-control"
+            id="descriptionInput"
+            placeholder="Enter Description"
+          ></textarea>
+        </div>
+
+        <!-- Photo Attachment -->
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Example file input</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="exampleFormControlFile1"
+          />
+        </div>
+
+        <!-- Send button -->
+        <input id="submit-input" class="btn btn-primary" placeholder="Send" />
+      </form>
+    </div>
+    <script src="./js/bundle.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
