@@ -11,10 +11,17 @@ $ git clone https://github.com/SunstroUS/discord-reminder-bot.git
 $ npm install
 // Run application
 $ npm run test
+// Open http://localhost:5000/ in browser
 ```
 
 ### Features
 
-Currently: Decided to go with using a web interface running on localhost, rather than electron.
+Currently: Got localhost version up and running.
 
-Working on: Actually filling out the web page.
+Working on: Photo attachments.
+
+### Screenshots
+
+![Web shot](https://i.imgur.com/taR3otk.png)
+
+![Discord shot](https://i.imgur.com/CcCcj2b.png)
