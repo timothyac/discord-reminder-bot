@@ -73,8 +73,3 @@ function sendToDiscord(e) {
       .sendTo(webhook);
   }, delay);
 }
-
-// Run function
-// sendToDiscord(10000);
-
-console.log("Running");
