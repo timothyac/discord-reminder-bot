@@ -10,7 +10,8 @@ const colorInput = document.querySelector("#color-input");
 const delayInput = document.querySelector("#delay-input");
 const titleInput = document.querySelector("#title-input");
 const descriptionInput = document.querySelector("#description-input");
-const fileAttachment = document.querySelector("#file-attachment");
+const photoInput = document.querySelector("#photo-input");
+const footerInput = document.querySelector("#footer-input");
 
 // Run refresh command to load products on init
 window.onload = onLoad;
@@ -41,13 +42,16 @@ function onLoad() {
 function sendToDiscord(e) {
   e.preventDefault();
 
-  let webhook = webhookInput.value;
-  let title = titleInput.value;
-  let color = colorInput.value;
-  let delay = delayInput.value;
-  let description = descriptionInput.value;
-  let image = "https://pbs.twimg.com/media/D6KdDkWXkAIWaLO.jpg";
+  // define all values
+  let webhook = webhookInput.value,
+    title = titleInput.value,
+    color = colorInput.value,
+    delay = delayInput.value,
+    description = descriptionInput.value,
+    image = photoInput.value,
+    footer = footerInput.value;
 
+  // Test for empty inputs
   if (
     webhook == "" ||
     title == "" ||
@@ -59,16 +63,18 @@ function sendToDiscord(e) {
     return;
   }
 
+  // Set these as defaults since they will most likely stay the same
   localStorage.setItem("webhook", JSON.stringify(webhook));
   localStorage.setItem("color", JSON.stringify(color));
   localStorage.setItem("delay", JSON.stringify(delay));
 
   setTimeout(() => {
     newWebhook
-      .addTitle(title || "Test title")
-      .addDescription(description || "Test description")
-      .addImageUrl(image || "https://pbs.twimg.com/media/D6KdDkWXkAIWaLO.jpg")
-      .addColor(color || "#F00000")
+      .addTitle(title)
+      .addDescription(description)
+      .addImageUrl(image)
+      .addColor(color)
+      .addFooter(footer)
       .addTimestamp()
       .sendTo(webhook);
   }, delay);

@@ -87,21 +87,36 @@
           ></textarea>
         </div>
 
-        <!-- Photo Attachment -->
-        <div class="form-group">
-          <label for="file-attachment"
-            >Photo Attachment (Currently Disabled)</label
-          >
-          <input
-            name="image"
-            type="file"
-            class="form-control-file"
-            id="file-attachment"
-          />
+        <div class="form-row">
+          <!-- Photo input -->
+          <div class="col">
+            <label for="photo-input">Photo URL</label>
+            <input
+              name="photo"
+              type="text"
+              class="form-control"
+              id="photo-input"
+              aria-describedby="photoHelp"
+              placeholder="Enter photo URL"
+            />
+          </div>
+
+          <!-- Footer input -->
+          <div class="col">
+            <label for="footer-input">Footer (Optional)</label>
+            <input
+              name="footer"
+              type="text"
+              class="form-control"
+              id="footer-input"
+              aria-describedby="footerHelp"
+              placeholder="Enter footer"
+            />
+          </div>
         </div>
 
         <!-- Send button -->
-        <button type="submit" id="submit-button" class="btn btn-primary">
+        <button type="submit" id="submit-button" class="btn btn-primary mt-3">
           Send
         </button>
       </form>

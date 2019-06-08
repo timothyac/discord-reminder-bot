@@ -35652,7 +35652,8 @@ const colorInput = document.querySelector("#color-input");
 const delayInput = document.querySelector("#delay-input");
 const titleInput = document.querySelector("#title-input");
 const descriptionInput = document.querySelector("#description-input");
-const fileAttachment = document.querySelector("#file-attachment");
+const photoInput = document.querySelector("#photo-input");
+const footerInput = document.querySelector("#footer-input");
 
 // Run refresh command to load products on init
 window.onload = onLoad;
@@ -35663,9 +35664,19 @@ submitButton.addEventListener("click", sendToDiscord);
 // run this on load
 function onLoad() {
   let oldWebhook = JSON.parse(localStorage.getItem("webhook"));
+  let oldColor = JSON.parse(localStorage.getItem("color"));
+  let oldDelay = JSON.parse(localStorage.getItem("delay"));
 
   if (oldWebhook) {
     webhookInput.value = oldWebhook;
+  }
+
+  if (oldColor) {
+    colorInput.value = oldColor;
+  }
+
+  if (oldDelay) {
+    delayInput.value = oldDelay;
   }
 }
 
@@ -35678,7 +35689,8 @@ function sendToDiscord(e) {
   let color = colorInput.value;
   let delay = delayInput.value;
   let description = descriptionInput.value;
-  let image = "https://pbs.twimg.com/media/D6KdDkWXkAIWaLO.jpg";
+  let image = photoInput.value;
+  let footer = footerInput.value;
 
   if (
     webhook == "" ||
@@ -35692,21 +35704,19 @@ function sendToDiscord(e) {
   }
 
   localStorage.setItem("webhook", JSON.stringify(webhook));
+  localStorage.setItem("color", JSON.stringify(color));
+  localStorage.setItem("delay", JSON.stringify(delay));
 
   setTimeout(() => {
     newWebhook
-      .addTitle(title || "Test title")
-      .addDescription(description || "Test description")
-      .addImageUrl(image || "https://pbs.twimg.com/media/D6KdDkWXkAIWaLO.jpg")
-      .addColor(color || "#F00000")
+      .addTitle(title)
+      .addDescription(description)
+      .addImageUrl(image)
+      .addColor(color)
+      .addFooter(footer)
       .addTimestamp()
       .sendTo(webhook);
   }, delay);
 }
-
-// Run function
-// sendToDiscord(10000);
-
-console.log("Running");
 
 },{"./config.json":211,"discord-webhook-api":56}]},{},[212]);
