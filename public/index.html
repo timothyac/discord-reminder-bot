@@ -10,11 +10,12 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>discord-reminder-api</title>
   </head>
   <body>
     <div class="container">
-      <header style="margin-top: 2rem">
+      <header class="text-light mt-5">
         <h1>
           Welcome to the web interface!
         </h1>
@@ -22,7 +23,7 @@
       <form action="/upload" method="post" enctype="multipart/form-data">
         <!-- Webhook input -->
         <div class="form-group">
-          <label for="webhook-input">Webhook URL</label>
+          <label for="webhook-input" class="text-light">Webhook URL</label>
           <input
             name="webhook"
             type="text"
@@ -36,7 +37,7 @@
         <div class="form-row">
           <!-- Color input -->
           <div class="col">
-            <label for="color-input">Color</label>
+            <label for="color-input" class="text-light">Color</label>
             <input
               name="color"
               type="text"
@@ -49,7 +50,7 @@
 
           <!-- Delay input -->
           <div class="col">
-            <label for="delay-input">Delay</label>
+            <label for="delay-input" class="text-light">Delay (Optional)</label>
             <input
               name="delay"
               type="number"
@@ -59,51 +60,12 @@
               placeholder="Enter delay (ms) | Example: 1500"
             />
           </div>
-        </div>
-
-        <br />
-
-        <!-- Title input -->
-        <div class="form-group">
-          <label for="title-input">Title</label>
-          <input
-            name="title"
-            type="text"
-            class="form-control"
-            id="title-input"
-            aria-describedby="titleHelp"
-            placeholder="Enter title"
-          />
-        </div>
-
-        <!-- Description textarea -->
-        <div class="form-group">
-          <label for="description-input">Description</label>
-          <textarea
-            name="description"
-            class="form-control"
-            id="description-input"
-            placeholder="Enter Description"
-          ></textarea>
-        </div>
-
-        <div class="form-row">
-          <!-- Photo input -->
-          <div class="col">
-            <label for="photo-input">Photo URL</label>
-            <input
-              name="photo"
-              type="text"
-              class="form-control"
-              id="photo-input"
-              aria-describedby="photoHelp"
-              placeholder="Enter photo URL"
-            />
-          </div>
 
           <!-- Footer input -->
           <div class="col">
-            <label for="footer-input">Footer (Optional)</label>
+            <label for="footer-input" class="text-light"
+              >Footer (Optional)</label
+            >
             <input
               name="footer"
               type="text"
@@ -115,8 +77,47 @@
           </div>
         </div>
 
+        <div class="form-row mt-3">
+          <!-- Title input -->
+          <div class="col">
+            <label for="title-input" class="text-light">Title</label>
+            <input
+              name="title"
+              type="text"
+              class="form-control"
+              id="title-input"
+              aria-describedby="titleHelp"
+              placeholder="Enter title"
+            />
+          </div>
+
+          <!-- Photo input -->
+          <div class="col">
+            <label for="photo-input" class="text-light">Photo URL</label>
+            <input
+              name="photo"
+              type="text"
+              class="form-control"
+              id="photo-input"
+              aria-describedby="photoHelp"
+              placeholder="Enter photo URL"
+            />
+          </div>
+        </div>
+
+        <!-- Description textarea -->
+        <div class="form-group mt-3">
+          <label for="description-input" class="text-light">Description</label>
+          <textarea
+            name="description"
+            class="form-control"
+            id="description-input"
+            placeholder="Enter Description"
+          ></textarea>
+        </div>
+
         <!-- Send button -->
-        <button type="submit" id="submit-button" class="btn btn-primary mt-3">
+        <button type="submit" id="submit-button" class="btn btn-primary mt-2">
           Send
         </button>
       </form>
