@@ -35684,25 +35684,22 @@ function onLoad() {
 function sendToDiscord(e) {
   e.preventDefault();
 
-  let webhook = webhookInput.value;
-  let title = titleInput.value;
-  let color = colorInput.value;
-  let delay = delayInput.value;
-  let description = descriptionInput.value;
-  let image = photoInput.value;
-  let footer = footerInput.value;
+  // define all values
+  let webhook = webhookInput.value,
+    title = titleInput.value,
+    color = colorInput.value,
+    delay = delayInput.value,
+    description = descriptionInput.value,
+    image = photoInput.value,
+    footer = footerInput.value;
 
-  if (
-    webhook == "" ||
-    title == "" ||
-    color == "" ||
-    delay == "" ||
-    description == ""
-  ) {
+  // Test for empty inputs
+  if (webhook == "" || title == "" || description == "") {
     alert("Missing info");
     return;
   }
 
+  // Set these as defaults since they will most likely stay the same
   localStorage.setItem("webhook", JSON.stringify(webhook));
   localStorage.setItem("color", JSON.stringify(color));
   localStorage.setItem("delay", JSON.stringify(delay));
@@ -35712,11 +35709,11 @@ function sendToDiscord(e) {
       .addTitle(title)
       .addDescription(description)
       .addImageUrl(image)
-      .addColor(color)
-      .addFooter(footer)
+      .addColor(color || "#fff")
+      .addFooter(footer || " ")
       .addTimestamp()
       .sendTo(webhook);
-  }, delay);
+  }, delay || 0);
 }
 
 },{"./config.json":211,"discord-webhook-api":56}]},{},[212]);
