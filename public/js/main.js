@@ -52,13 +52,7 @@ function sendToDiscord(e) {
     footer = footerInput.value;
 
   // Test for empty inputs
-  if (
-    webhook == "" ||
-    title == "" ||
-    color == "" ||
-    delay == "" ||
-    description == ""
-  ) {
+  if (webhook == "" || title == "" || description == "") {
     alert("Missing info");
     return;
   }
@@ -73,9 +67,9 @@ function sendToDiscord(e) {
       .addTitle(title)
       .addDescription(description)
       .addImageUrl(image)
-      .addColor(color)
-      .addFooter(footer)
+      .addColor(color || "#fff")
+      .addFooter(footer || " ")
       .addTimestamp()
       .sendTo(webhook);
-  }, delay);
+  }, delay || 0);
 }
