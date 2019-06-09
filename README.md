@@ -16,12 +16,12 @@ $ npm run test
 
 ### Features
 
-Currently: Got localhost version up and running.
+Currently: Cleaned up styling, ditched photo attachments for URL. Processing is back client-side.
 
-Working on: Photo attachments.
+Working on: Would like to add an embed visualilzer.
 
 ### Screenshots
 
-![Web shot](https://i.imgur.com/taR3otk.png)
+![Web shot](https://i.imgur.com/hzDPQyt.png)
 
 ![Discord shot](https://i.imgur.com/CcCcj2b.png)
